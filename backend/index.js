@@ -1,15 +1,16 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import { DatesModel } from './models/DatesModel.js';
+import cors from 'cors';
 
-mongoose.connect('mongodb://localhost:27017/evalucionTutores')
+mongoose.connect('mongodb://localhost:27017/evaluacionTutores')
 .then(()=>{
     console.log('¡La conexión ha sido exitosa!')
 })
 const app = express();
 
 app.use(express.json());
-
+app.use(cors());
 app.get('/',(req,res)=>{
     res.send('Hola desde mi servidor') //<- Es un endpoint
 });
@@ -31,8 +32,13 @@ app.post('/create',(req,res)=>{
     };
     DatesModel.create(obj);
     return res.status(200).json({
-        msg:'¡formulario con éxito!'
+        msg:'¡Formulario registrado con éxito!'
     })
+})
+
+app.get('/dates', async(req,res)=>{
+    const response = await DatesModel.find()
+    return res.status(200).json(response)
 })
 
 app.listen(4000,()=>{
