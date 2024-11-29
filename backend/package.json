@@ -11,7 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.21.0",
+=======
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+>>>>>>> 6c19173b09265119f31cc2761b321844be6d7537
     "mongoose": "^8.7.0"
   },
   "devDependencies": {
