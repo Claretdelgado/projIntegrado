@@ -65,7 +65,7 @@ export default {
     },
     updateUser: async (req, res)=>{
         try {
-            const id = req.parms.id;
+            const id = req.params.id;
             const user = await userModel.findById(id);
             if(!user){
                 res.status(400).json({
