@@ -1,11 +1,8 @@
 import { Button, Card, Container, Form} from 'react-bootstrap';
 import './App.css';
 import { useState } from 'react';
-<<<<<<< HEAD
-=======
 import axios from 'axios';
 import Swal from'sweetalert2';
->>>>>>> 6c19173b09265119f31cc2761b321844be6d7537
 
 function App() {
   const [cita, setCita] = useState({});
@@ -28,8 +25,6 @@ function App() {
     ){
       setIsEnabled(false) //Si lo del if se cumple, el valor se vuelve false para encenderlo (por la pregunta de disabled que sería ¿Estoy deshabilitado?)
     }
-<<<<<<< HEAD
-=======
   };
 
   const onSubmit = async ()=>{
@@ -41,7 +36,6 @@ function App() {
     } catch (error) {
       Swal.fire('¡Error al registrar los datos!', '', 'error')
     }
->>>>>>> 6c19173b09265119f31cc2761b321844be6d7537
   }
 
   return (
@@ -74,11 +68,7 @@ function App() {
               <Form.Label>Correo Electrónico</Form.Label>
               <Form.Control onChange={onChange} placeholder='Ingresa el correo del paciente' type='email' name='Email'/> 
             </Form.Group>
-<<<<<<< HEAD
-            <Button disabled={isEnabled} variant="outline-success" type='submit'>Enviar</Button>
-=======
             <Button onClick={() => {onSubmit()}} disabled={isEnabled} variant="outline-success">Enviar</Button>
->>>>>>> 6c19173b09265119f31cc2761b321844be6d7537
             <Button variant="outline-danger" type='reset'>Cancelar</Button>
           </Form>
         </Card.Body>
